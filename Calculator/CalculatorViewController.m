@@ -58,6 +58,10 @@
     }else{
         self.display.text = digit;
         self.userIsInTheMiddleOfEnteringANumber = YES;
+        if( [digit isEqual:@"."])
+        {
+            self.digitIsFloatingPoint = YES;
+        }
     }
 }
 
