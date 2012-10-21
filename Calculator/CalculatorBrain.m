@@ -99,6 +99,16 @@
     return [self popOperandOffStack:stack];
 }
 
++ (double)runProgram:(id)program usingVariableValues:(NSDictionary *)variableValues
+{
+    return 0;
+}
+
++ (NSSet *)variablesUsedInProgram:(id)program
+{
+    return [[NSSet alloc] init];
+}
+
 
 - (void) reset
 {

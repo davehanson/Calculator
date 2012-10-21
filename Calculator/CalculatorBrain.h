@@ -14,10 +14,13 @@
 - (double)performOperation:(NSString *)operation;
 - (void) reset;
 
-//Assignment2
+//Assignment2 Lecture4
 @property (readonly) id program;
-
 + (double)runProgram:(id)program;
 + (NSString *)descriptionOfProgram:(id)program;
+
+//Assignment2
++ (double)runProgram:(id)program usingVariableValues:(NSDictionary *)variableValues;
++ (NSSet *)variablesUsedInProgram:(id)program;
 
 @end

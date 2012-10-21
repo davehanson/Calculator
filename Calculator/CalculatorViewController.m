@@ -64,6 +64,19 @@
         }
     }
 }
+- (IBAction)variablePressed:(UIButton *)sender
+{
+    NSString *digit = [sender currentTitle];
+    
+    if(self.userIsInTheMiddleOfEnteringANumber){
+        [self enterPressed];
+        self.display.text = digit;
+        [self enterPressed];
+    }else{
+        self.display.text = digit;
+        [self enterPressed];   
+    }
+}
 
 - (IBAction)enterPressed
 {
@@ -124,17 +137,5 @@
     }
 }
 
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
