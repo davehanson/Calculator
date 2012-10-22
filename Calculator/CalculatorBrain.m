@@ -11,17 +11,26 @@
 
 @interface CalculatorBrain()
 @property (nonatomic, strong) NSMutableArray *programStack;
+@property (nonatomic, strong) NSDictionary *programVariableValues;
 @end
 
 @implementation CalculatorBrain
 
 @synthesize programStack = _programStack;
+@synthesize programVariableValues = _programVariableValues;
 
 - (NSMutableArray *) programStack
 {
     if(!_programStack) _programStack = [[NSMutableArray alloc] init];
     
     return _programStack;
+}
+
+- (NSDictionary *) programVariableValues
+{
+    if(!_programVariableValues) _programVariableValues = [[NSDictionary alloc] init];
+    
+    return [_programVariableValues copy];
 }
 
 - (void)pushOperand:(double)operand

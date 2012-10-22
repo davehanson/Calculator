@@ -20,6 +20,7 @@
 
 @synthesize display = _display;
 @synthesize displayTape = _displayTape;
+@synthesize displayVariables = _displayVariables;
 @synthesize userIsInTheMiddleOfEnteringANumber = _userIsInTheMiddleOfEnteringANumber;
 @synthesize digitIsFloatingPoint = _digitIsFloatingPoint;
 @synthesize brain = _brain;
@@ -76,6 +77,43 @@
         self.display.text = digit;
         [self enterPressed];   
     }
+}
+
+- (IBAction)setTestVariableValuesSet:(UIButton *)sender
+{
+    NSRange range1 = [self.displayTape.text rangeOfString:@"1"];
+    NSRange range2 = [self.displayTape.text rangeOfString:@"2"];
+    NSRange range3 = [self.displayTape.text rangeOfString:@"3"];
+    
+    
+    NSDictionary *variableDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                        [NSNumber numberWithDouble:1.0], @"1",
+                                        [NSNumber numberWithDouble:2.0], @"2",
+                                        [NSNumber numberWithDouble:3.0], @"3", nil];
+    
+    if(!(range1.location == NSNotFound))
+    {
+        variableDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
+                              [NSNumber numberWithDouble:5.0], @"1",
+                              [NSNumber numberWithDouble:2.5], @"2",
+                              [NSNumber numberWithDouble:12.25], @"3", nil];
+    }
+    else if(!(range2.location == NSNotFound))
+    {
+        variableDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
+                              [NSNumber numberWithDouble:11.0], @"1",
+                              [NSNumber numberWithDouble:23.25], @"2",
+                              [NSNumber numberWithDouble:3.0], @"3", nil];
+        
+    }
+    else if(!(range3.location == NSNotFound))
+    {
+        variableDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
+                              [NSNumber numberWithDouble:2.0], @"1",
+                              [NSNumber numberWithDouble:6.0], @"2",
+                              [NSNumber numberWithDouble:8.0], @"3", nil];
+    }
+    
 }
 
 - (IBAction)enterPressed

@@ -24,3 +24,4 @@
 + (NSSet *)variablesUsedInProgram:(id)program;
 
 @end
+
