@@ -81,9 +81,9 @@
 
 - (IBAction)setTestVariableValuesSet:(UIButton *)sender
 {
-    NSRange range1 = [self.displayTape.text rangeOfString:@"1"];
-    NSRange range2 = [self.displayTape.text rangeOfString:@"2"];
-    NSRange range3 = [self.displayTape.text rangeOfString:@"3"];
+    NSRange range1 = [sender.currentTitle rangeOfString:@"1"];
+    NSRange range2 = [sender.currentTitle rangeOfString:@"2"];
+    NSRange range3 = [sender.currentTitle rangeOfString:@"3"];
     
     
     NSDictionary *variableDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -114,6 +114,7 @@
                               [NSNumber numberWithDouble:8.0], @"3", nil];
     }
     
+    self.displayVariables.text = [variableDictionary description];
 }
 
 - (IBAction)enterPressed
