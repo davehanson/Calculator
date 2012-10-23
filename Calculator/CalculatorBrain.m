@@ -30,7 +30,7 @@
 {
     if(!_programVariableValues) _programVariableValues = [[NSDictionary alloc] init];
     
-    return [_programVariableValues copy];
+    return _programVariableValues;
 }
 
 - (void)pushOperand:(double)operand

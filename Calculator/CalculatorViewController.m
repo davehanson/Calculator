@@ -114,6 +114,7 @@
                               [NSNumber numberWithDouble:8.0], @"3", nil];
     }
     
+
     self.displayVariables.text = [variableDictionary description];
 }
 
